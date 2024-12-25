@@ -1,6 +1,3 @@
-### Professional README File for the LSTM RNN Next Word Prediction App
-
----
 
 # **LSTM RNN Next Word Prediction**
 
@@ -70,6 +67,4 @@ Have suggestions or found an issue? Feel free to open an issue or contact us via
 
 ### Built with ❤️ by TechWithAkash ✨
 
----
 
-Let me know if you'd like further refinements or assistance in setting up the screenshot URL. 😊
