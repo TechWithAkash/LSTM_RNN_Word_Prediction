@@ -21,33 +21,32 @@
 
 ## 📸 **App Screenshot**
 
-![lstmdemo](https://github.com/user-attachments/assets/25858f03-0991-4098-a8d1-91d544336494)
- <!-- Replace this with your app's screenshot URL -->
+![App Screenshot](https://github.com/user-attachments/assets/25858f03-0991-4098-a8d1-91d544336494)
 
 ---
 
-## ⚙️ **How It Works**
-1. Enter a sequence of words in the text input field.
-2. Click the "🚀 Predict Next Word" button.
-3. Instantly view the predicted next word powered by LSTM RNN.
-
----
-
-## 🛠️ **Technologies Used**
+## ⚙️ **Technologies Used**
 - **Frontend**: Streamlit
 - **Backend**: TensorFlow/Keras LSTM Model
 - **Hosting**: Streamlit Cloud
 
 ---
 
+## 🛠️ **How It Works**
+1. Enter a sequence of words in the text input field.
+2. Click the "🚀 Predict Next Word" button.
+3. Instantly view the predicted next word powered by LSTM RNN.
+
+---
+
 ## 📚 **How to Run Locally**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository/lstm-word-prediction.git
+   git clone https://github.com/TechWithAkash/LSTM_RNN_Word_Prediction.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd lstm-word-prediction
+   cd LSTM_RNN_Word_Prediction
    ```
 3. Install dependencies:
    ```bash
@@ -61,10 +60,8 @@
 ---
 
 ## 📬 **Feedback**
-Have suggestions or found an issue? Feel free to open an issue or contact us via email at [your-email@example.com](mailto:your-email@example.com).
+Have suggestions or found an issue? Feel free to open an issue or contact us via email at [your-email@example.com](mailto:vishwakarmaakashav17@gmail.com).
 
 ---
 
-### Built with ❤️ by TechWithAkash ✨
-
-
+### Built with ❤️ by [TechWithAkash](https://github.com/TechWithAkash) ✨
