@@ -60,7 +60,7 @@
 ---
 
 ## 📬 **Feedback**
-Have suggestions or found an issue? Feel free to open an issue or contact us via email at [your-email@example.com](mailto:vishwakarmaakashav17@gmail.com).
+Have suggestions or found an issue? Feel free to open an issue or contact me via email at [vishwakarmaakashav17@gmail.com](mailto:vishwakarmaakashav17@gmail.com).
 
 ---
 
