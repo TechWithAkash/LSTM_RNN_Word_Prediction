@@ -4,12 +4,20 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# Load the LSTM model
-model = load_model('next_word_prediction.h5')
+# Load the LSTM model with error handling
+try:
+    model = load_model('next_word_prediction.h5')
+except Exception as e:
+    st.error(f"Error loading the model: {e}")
+    st.stop()
 
-# Load the tokenizer
-with open("lstm_tokenizer.pickle", "rb") as handle:
-    tokenizer = pickle.load(handle)
+# Load the tokenizer with error handling
+try:
+    with open("lstm_tokenizer.pickle", "rb") as handle:
+        tokenizer = pickle.load(handle)
+except FileNotFoundError:
+    st.error("Tokenizer file not found! Make sure 'lstm_tokenizer.pickle' is in the correct directory.")
+    st.stop()
 
 # Function to predict the next words
 def predict_next_words(model, tokenizer, text, max_sequence_len):
@@ -18,7 +26,12 @@ def predict_next_words(model, tokenizer, text, max_sequence_len):
         token_list = token_list[-(max_sequence_len-1):]  # Ensure sequence length matches max_sequence_len
 
     token_list = pad_sequences([token_list], maxlen=max_sequence_len-1, padding='pre')
-    predicted = model.predict(token_list, verbose=0)
+    try:
+        predicted = model.predict(token_list, verbose=0)
+    except Exception as e:
+        st.error(f"Error during prediction: {e}")
+        return None
+
     predicted_word_index = np.argmax(predicted, axis=1)
 
     for word, index in tokenizer.word_index.items():
@@ -26,7 +39,7 @@ def predict_next_words(model, tokenizer, text, max_sequence_len):
             return word
     return None
 
-# Streamlit app with improved UI
+# Streamlit app UI
 st.markdown(
     """
     <style>
@@ -89,12 +102,18 @@ input_text = st.text_input("🔤 Enter a sequence of words:", "To be or not to b
 
 # Predict button
 if st.button("🚀 Predict Next Word"):
-    max_sequence_len = model.input_shape[1] + 1  # Retrieve max sequence length
-    next_word = predict_next_words(model, tokenizer, input_text, max_sequence_len)
-    st.markdown(
-        f"<p class='output-text'>The next word is: <span style='color: #28a745;'>{next_word}</span></p>",
-        unsafe_allow_html=True,
-    )
+    try:
+        max_sequence_len = model.input_shape[1] + 1  # Retrieve max sequence length
+        next_word = predict_next_words(model, tokenizer, input_text, max_sequence_len)
+        if next_word:
+            st.markdown(
+                f"<p class='output-text'>The next word is: <span style='color: #28a745;'>{next_word}</span></p>",
+                unsafe_allow_html=True,
+            )
+        else:
+            st.markdown("<p class='output-text'>Could not predict the next word. Try again!</p>", unsafe_allow_html=True)
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 else:
     st.markdown("<p class='output-text'>Waiting for your input... 🤔</p>", unsafe_allow_html=True)
 
