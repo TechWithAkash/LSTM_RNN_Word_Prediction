@@ -1,5 +1,5 @@
 
-# **LSTM RNN Next Word Prediction**
+# **🤖 LSTM RNN Next Word Prediction**
 
 ✨ A modern AI-powered web application that predicts the next word in a sequence using an advanced Long Short-Term Memory (LSTM) Recurrent Neural Network. This app is designed to assist with creative writing, sentence completion, and language learning.
 
@@ -15,7 +15,7 @@
 
 ## 🚀 **Live Demo**
 
-👉 **Try it out here**: [LSTM RNN Word Prediction App](https://lstmrnnwordpredictiongit-sezr5cif7nxmupywcb6tny.streamlit.app/)
+👉 **Try it out here**: [LSTM RNN Word Prediction App](https://t7y83kp37vvodfgqlv3itz.streamlit.app/)
 
 ---
 
